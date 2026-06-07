@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <title>{{ temple.temple_name }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<div class="navbar">
+    🛕 Temple Locator India
+</div>
+
+
+<div class="details-card">
+
+    <h1>
+        {{ temple.temple_name }}
+    </h1>
+
+    <p>
+        <strong>City:</strong>
+        {{ temple.city }}
+    </p>
+
+    <p>
+        <strong>Area:</strong>
+        {{ temple.area }}
+    </p>
+
+    <p>
+        <strong>Address:</strong>
+        {{ temple.address }}
+    </p>
+
+    <p>
+        <strong>Description:</strong>
+        {{ temple.description }}
+    </p>
+
+    <a
+      href="https://www.google.com/maps/search/?api=1&query={{ temple.latitude }},{{ temple.longitude }}"
+      target="_blank"
+      class="map-btn">
+
+      Open in Google Maps
+
+    </a>
+
+</div>
+
+</body>
+</html>

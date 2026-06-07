@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <title>Search Results</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<div class="navbar">
+    🛕 Temple Locator India
+</div>
+
+<div class="container">
+
+<h2 class="result-title">
+    Results for "{{ search_term }}"
+</h2>
+
+{% if temples %}
+
+    {% for temple in temples %}
+
+    <div class="card">
+
+        <h3>{{ temple.temple_name }}</h3>
+
+        <p>
+            📍 City: {{ temple.city }}
+        </p>
+
+        <p>
+            🏛 Area: {{ temple.area }}
+        </p>
+
+        <a href="/temple/{{ temple.id }}"
+           class="view-btn">
+
+           View Details
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <h2>No Temples Found</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

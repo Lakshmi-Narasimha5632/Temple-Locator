@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <title>Temple Locator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<div class="navbar">
+    🛕 Temple Locator India
+</div>
+
+<div class="hero">
+
+    <h1>Find Temples Across India</h1>
+
+    <p>
+        Search by Temple Name, City, Area, State or Deity
+    </p>
+
+    <form action="/search" method="GET">
+
+        <input
+            type="text"
+            name="search"
+            class="search-box"
+            placeholder="Search temples..."
+            required
+        >
+
+        <button class="search-btn">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
